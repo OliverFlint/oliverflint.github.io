@@ -7,36 +7,44 @@
     <script src="js/jquery-2.1.4.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script type="text/javascript">
+      //The GitHub username
       var username = "oliverflint";
+
       $(document).ready(function(){
         $.getJSON("https://api.github.com/users/" + username + "/repos?sort=created_at")
           .done(function(repo){
             $.each(repo, function(index) {
               if(repo[index].name != username + ".github.io") {
+
+                $("<div>", {
+                  id: repo[index].id + "col",
+                  class: "col-md-6"
+                }).appendTo("#repoList");
+
                 $("<div>", {
                   id: repo[index].id + "panel",
                   class: "panel panel-primary"
-                }).appendTo("#repoList");
+                }).appendTo("#" + repo[index].id + "col");
 
                 $("<div>", {
                   class: "panel-heading",
                   text: repo[index].name
-                }).appendTo("#" + repo[index].id + "panel")
+                }).appendTo("#" + repo[index].id + "panel");
 
                 $("<div>", {
                   class: "panel-body",
                   text: repo[index].description
-                }).appendTo("#" + repo[index].id + "panel")
+                }).appendTo("#" + repo[index].id + "panel");
 
                 $("<div>", {
                   id: repo[index].id + "footer",
                   class: "panel-footer",
-                }).appendTo("#" + repo[index].id + "panel")
+                }).appendTo("#" + repo[index].id + "panel");
 
                 $("<div>", {
                   id: repo[index].id + "footerrow",
                   class: "row",
-                }).appendTo("#" + repo[index].id + "footer")
+                }).appendTo("#" + repo[index].id + "footer");
 
                 if(repo[index].homepage != null) {
                     $("<div class='col-md-1'><a href='" + repo[index].homepage + "' title='View the website' data-toggle='tooltip'><span class='mega-octicon octicon-globe'></span></a></div>").appendTo("#" + repo[index].id + "footerrow");
@@ -48,6 +56,7 @@
                 $("<div class='col-md-1'><a href='" + repo[index].html_url + "/milestones' title='Milestones' data-toggle='tooltip'><span class='mega-octicon octicon-milestone'></span></a></div>").appendTo("#" + repo[index].id + "footerrow");
                 $("<div class='col-md-1'><a href='" + repo[index].html_url + "/pulse' title='Pulse' data-toggle='tooltip'><span class='mega-octicon octicon-pulse'></span></a></div>").appendTo("#" + repo[index].id + "footerrow");
                 $("<div class='col-md-1'><a href='" + repo[index].html_url + "/graphs' title='Graphs' data-toggle='tooltip'><span class='mega-octicon octicon-graph'></span></a></div>").appendTo("#" + repo[index].id + "footerrow");
+
               } else {
                 $("#heading").append(repo[index].description);
               }

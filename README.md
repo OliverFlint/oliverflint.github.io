@@ -6,3 +6,5 @@ This site is built as a template for user or organisation GitHub Pages. Simple e
       var username = "oliverflint";
 ```
 Download the source code here... https://github.com/OliverFlint/oliverflint.github.io
+
+You can also use one of the many bootstrap template included from [bootswatch](https://bootswatch.com/)

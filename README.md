@@ -1,1 +1,1 @@
-#My GitHup Pages template
+#My GitHub Pages template

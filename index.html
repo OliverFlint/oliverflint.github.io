@@ -59,6 +59,7 @@
 
               } else {
                 $("#heading").append(repo[index].description);
+                document.title = repo[index].name;
               }
             });
             $('[data-toggle="tooltip"]').tooltip();

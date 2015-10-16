@@ -7,4 +7,7 @@ This site is built as a template for user or organisation GitHub Pages. Simple e
 ```
 Download the source code here... https://github.com/OliverFlint/oliverflint.github.io
 
-You can also use one of the many bootstrap template included from [bootswatch](https://bootswatch.com/)
+You can also use one of the many bootstrap templates included from [bootswatch](https://bootswatch.com/)
+```
+    <link rel="stylesheet" href="css/yeti.bootstrap.min.css">
+```

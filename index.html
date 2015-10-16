@@ -46,7 +46,7 @@
                   class: "row",
                 }).appendTo("#" + repo[index].id + "footer");
 
-                if(repo[index].homepage != null) {
+                if(repo[index].homepage != null && repo[index].homepage != '') {
                     $("<div class='col-md-1'><a href='" + repo[index].homepage + "' title='View the website' data-toggle='tooltip'><span class='mega-octicon octicon-globe'></span></a></div>").appendTo("#" + repo[index].id + "footerrow");
                 }
                 $("<div class='col-md-1'><a href='" + repo[index].html_url + "' title='View the code' data-toggle='tooltip'><span class='mega-octicon octicon-code'></span></a></div>").appendTo("#" + repo[index].id + "footerrow");
